@@ -1,0 +1,261 @@
+.navbar{
+    width: 100%;
+    background: #FFFFFF;
+    .navbar-nav{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-direction: row;
+        height: 70px;
+        @media screen and (max-width:992px) {
+            overflow: hidden;
+        }
+        @media screen and (max-width:767px) {
+            flex-direction: column;
+            height: auto;
+            padding: 17px 0 19px;
+        }
+        .nav_brand{
+            .nav_brand_logo{
+                display: flex;
+                flex-wrap: nowrap;
+                flex-direction: row;
+                align-items: center;
+                justify-content: flex-start;
+                .brand_logo_text{
+                    font-style: normal;
+                    font-weight: 800;
+                    font-size: 24px;
+                    line-height: 21px;
+                    letter-spacing: 0.9px;
+                    text-transform: uppercase;
+                    color: #000000;
+                    margin-right: 20px;
+                }
+                .brand_logo_icons{
+                    display: flex;
+                    flex-wrap: nowrap;
+                    flex-direction: row;
+                }
+            }
+        }
+        .nav_menu{
+            .nav_menu_list{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-wrap: nowrap;
+                flex-direction: row;
+                @media screen and (max-width:992px) {
+                    align-items: flex-start;
+                    justify-content: flex-start;
+                    flex-direction: column;
+                    flex-wrap: wrap;
+                    background: rgb(255, 255, 255);
+                    padding-bottom: 15px;
+                    width: 300px;
+                    height: 100%;
+                }
+                @media screen and (max-width:576px) {
+                    width: 100%;
+                    height: 220px;
+                }
+                .nav_menu_item{
+                    margin-right: 70px;
+                    @media screen and (max-width:1200px) {
+                        margin-right: 50px;
+                    }
+                    @media screen and (max-width:992px) {
+                        margin-top: 15px;
+                        padding-left: 30px;
+                    }
+                    &:last-child{
+                        margin-right: 0;
+                        
+                    }
+                    .nav_menu_link{
+                        font-style: normal;
+                        font-weight: normal;
+                        font-size: 16px;
+                        line-height: 21px;
+                        letter-spacing: 1.4px;
+                        text-transform: uppercase;
+                        color: #000000;
+                    }
+                }
+            }
+            @media screen and (max-width:992px) {
+                position: fixed;
+                top: 115px;
+                left:-100%;
+                right: 100%;
+                bottom: 0;
+                flex-direction: column;
+                flex-wrap: wrap;
+                z-index: 9999;
+                background: rgba(0, 0, 0, 0.5);
+            }
+            @media screen and (max-width:767px) {
+                top: 155px;
+            }
+            @media screen and (max-width:576px) {
+                height: 220px;
+            }
+            &.show_mobile_menu{
+                left:0;
+                right: 0;
+            }
+        }
+        .nav_icons{
+            @media screen and (max-width:767px) {
+                width: 100%;
+            }
+            
+            .nav_icons_list{
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                flex-direction: row;
+                flex-wrap: nowrap;
+                @media screen and (max-width:767px) {
+                    justify-content: space-between;
+                    margin-top: 35px;
+                }
+                .nav_icon_item{
+                    margin-left: 40px;
+                   svg{
+                    cursor: pointer;
+                   }
+                    @media screen and (max-width:1200px) {
+                        margin-left: 30px;
+                    }
+                    &:first-child{
+                        margin-left: 0;
+                    }
+                    &.item_show_menu{
+                        display: none;
+                        height: 21px;
+                        span{
+                            display: flex;
+                            align-items: center;
+                            margin-top:8.5px ;
+                            height: 1.1px;
+                            width: 20px;
+                            background: #000000;
+                            &:first-child{
+                                margin-top: 0;
+                            }
+                        }
+                        @media screen and (max-width:992px) {
+                            display: block;
+                        }
+                    }
+                    &.item_user{
+                        position: relative;
+                        .user_card_bg{
+                            display: none;
+                            position: fixed;
+                            top: 0;
+                            right: 0;
+                            left: 0;
+                            bottom: 0;
+                            background:rgba(0,0,0,.5);
+                            z-index:8888;
+                            &.show{
+                                display: block;
+                            }
+                            .user_card{
+                                position: absolute;
+                                max-width: 610px;
+                                width: 100%;
+                                max-height: 526px;
+                                height: auto;
+                                background: #FFFFFF;
+                                padding: 90px 93px 107px;
+                                left: 50%;
+                                top: 50%;
+                                transform: translate(-50%,-50%);
+                                z-index: 9999;
+                                .item_close_menu{
+                                    position: absolute;
+                                    top: 35px;
+                                    right: 37px;
+                                    cursor: pointer;
+                                    @media screen and (max-width:767px) {
+                                        top: 15px;
+                                        right: 15px;
+                                    }
+                                    span{
+                                        font-size: 25px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    &.item_basket{
+                        position: relative;
+                        .amout_shop{
+                            background: #000;
+                            position: absolute;
+                            top: -10px;
+                            right: -10px;
+                            width: 18px;
+                            height: 18px;
+                            border-radius: 50%;
+                            color: #FFFFFF;
+                            text-align: center;
+                            font-size: 11px;
+                            line-height:18px;
+                            @media screen and (max-width:767px) {
+                               display: none;
+                            }
+                        }
+                        .basket_card{
+                            display: none;
+                            position: fixed;
+                            top: 0;
+                            right: 0;
+                            left: 0;
+                            bottom: 0;
+                            background:rgba(0,0,0,.5);
+                            z-index: 8888;
+                            &.show{
+                                display: block;
+                            }
+                            .card_shop_all{
+                                position: absolute;
+                                max-width: 764px;
+                                width: 100%;
+                                height: 100vh;
+                                background: #FFFFFF;
+                                padding: 92px 68px 67px;
+                                right: 0;
+                                top: 0;
+                                z-index: 222;
+                                .item_close_menu{
+                                    width: 38px;
+                                    height: 38px;
+                                    position: absolute;
+                                    right: 54px;
+                                    top: 38px;
+                                    z-index: 9999;
+                                    cursor: pointer;
+                                    @media screen and (max-width:767px) {
+                                        top: 20px;
+                                        right: 15px;
+                                    }
+                                    span{
+                                        font-size: 25px;
+                                        font-weight: 600;
+                                    }
+                                }
+                            }
+                            
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
